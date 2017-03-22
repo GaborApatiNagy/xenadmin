@@ -1,4 +1,4 @@
-/* Copyright (c) Citrix Systems, Inc. 
+﻿/* Copyright (c) Citrix Systems, Inc. 
  * All rights reserved. 
  * 
  * Redistribution and use in source and binary forms, 
@@ -29,32 +29,37 @@
  * SUCH DAMAGE.
  */
 
-using System;
-using NUnit.Framework;
-using XenAdmin.Alerts;
 using XenAdmin.Core;
-using XenAdminTests.UnitTests.UnitTestHelper;
+using XenAdmin.Diagnostics.Checks;
 
-namespace XenAdminTests.UnitTests.AlertTests
+namespace XenAdmin.Diagnostics.Problems
 {
-    [TestFixture, Category(TestCategories.Unit)]
-    public class XenCenterUpdateAlertTests
+    public class XenCenterVersionProblem : Problem
     {
-        [Test]
-        public void VerifyStoredDataWithDefaultConstructor()
-        {
-            IUnitTestVerifier validator = new VerifyGetters(new XenCenterUpdateAlert(new XenCenterVersion("6.0.2", "xc", true, false, "http://url", new DateTime(2011, 12, 09).ToString())));
+        private XenCenterVersion _requiredXenCenterVersion;
 
-            validator.Verify(new AlertClassUnitTestData
+        public XenCenterVersionProblem(Check check, XenCenterVersion requiredXenCenterVersion)
+            : base(check)
+        {
+            _requiredXenCenterVersion = requiredXenCenterVersion;
+        }
+
+        public override string Title
+        {
+            get { return Messages.PROBLEM_XENCENTER_VERSION_TITLE; }
+        }
+
+        public override string Description
+        {
+            get { return string.Format(Messages.UPDATES_WIZARD_NEWER_XENCENTER_REQUIRED, _requiredXenCenterVersion.Version); }
+        }
+
+        public override string HelpMessage
+        {
+            get
             {
-                AppliesTo = XenAdmin.Branding.BRAND_CONSOLE,
-                FixLinkText = "Go to Web Page",
-                HelpID = "XenCenterUpdateAlert",
-                Description = "xc is now available. Download the new version from the " + XenAdmin.Branding.COMPANY_NAME_SHORT + " website.",
-                HelpLinkText = "Help",
-                Title = "xc is now available",
-                Priority = "Priority5"
-            });
+                return "";
+            }
         }
     }
 }

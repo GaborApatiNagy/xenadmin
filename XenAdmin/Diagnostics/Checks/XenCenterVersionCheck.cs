@@ -1,4 +1,4 @@
-/* Copyright (c) Citrix Systems, Inc. 
+﻿/* Copyright (c) Citrix Systems, Inc. 
  * All rights reserved. 
  * 
  * Redistribution and use in source and binary forms, 
@@ -29,32 +29,36 @@
  * SUCH DAMAGE.
  */
 
-using System;
-using NUnit.Framework;
-using XenAdmin.Alerts;
+using XenAPI;
+using XenAdmin.Diagnostics.Problems;
 using XenAdmin.Core;
-using XenAdminTests.UnitTests.UnitTestHelper;
+using XenAdmin.Diagnostics.Problems.PoolProblem;
+using XenAdmin.Alerts;
 
-namespace XenAdminTests.UnitTests.AlertTests
+
+namespace XenAdmin.Diagnostics.Checks
 {
-    [TestFixture, Category(TestCategories.Unit)]
-    public class XenCenterUpdateAlertTests
+    public class XenCenterVersionCheck : Check
     {
-        [Test]
-        public void VerifyStoredDataWithDefaultConstructor()
-        {
-            IUnitTestVerifier validator = new VerifyGetters(new XenCenterUpdateAlert(new XenCenterVersion("6.0.2", "xc", true, false, "http://url", new DateTime(2011, 12, 09).ToString())));
+        private XenServerVersion _newServerVersion;
 
-            validator.Verify(new AlertClassUnitTestData
-            {
-                AppliesTo = XenAdmin.Branding.BRAND_CONSOLE,
-                FixLinkText = "Go to Web Page",
-                HelpID = "XenCenterUpdateAlert",
-                Description = "xc is now available. Download the new version from the " + XenAdmin.Branding.COMPANY_NAME_SHORT + " website.",
-                HelpLinkText = "Help",
-                Title = "xc is now available",
-                Priority = "Priority5"
-            });
+        public XenCenterVersionCheck(XenServerVersion newServerVersion)
+            : base(null)
+        {
+            _newServerVersion = newServerVersion;
+        }
+        
+        protected override Problem RunCheck()
+        {
+            var requiredXenCenterVersion = Updates.GetRequiredXenCenterVersion(_newServerVersion);
+            if (requiredXenCenterVersion != null)
+                return new XenCenterVersionProblem(this, requiredXenCenterVersion);
+            return null;
+        }
+
+        public override string Description
+        {
+            get { return Messages.XENCENTER_VERSION_CHECK_DESCRIPTION; }
         }
     }
 }
