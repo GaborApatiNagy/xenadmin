@@ -36,6 +36,7 @@ using XenAdmin;
 using XenAdmin.Controls;
 using XenAdmin.Controls.MainWindowControls;
 using XenAdmin.Model;
+using XenAdminTests.LicensingTests;
 using XenAPI;
 
 namespace XenAdminTests.TabsAndMenus
@@ -123,6 +124,7 @@ namespace XenAdminTests.TabsAndMenus
 	            new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	            new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	            new ExpectedTextMenuItem("&Export...", false, false  ),
+                new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                 new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                 new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	            new ExpectedSeparator(),
@@ -232,6 +234,7 @@ namespace XenAdminTests.TabsAndMenus
 	            new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	            new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	            new ExpectedTextMenuItem("&Export...", true, false  ),
+                new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                 new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                 new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	            new ExpectedSeparator(),
@@ -343,6 +346,7 @@ namespace XenAdminTests.TabsAndMenus
 	                new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                new ExpectedTextMenuItem("&Export...", true, false  ),
+                    new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                     new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                     new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                new ExpectedSeparator(),
@@ -454,6 +458,7 @@ namespace XenAdminTests.TabsAndMenus
 	            new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	            new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	            new ExpectedTextMenuItem("&Export...", false, false  ),
+                new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                 new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                 new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	            new ExpectedSeparator(),
@@ -503,7 +508,7 @@ namespace XenAdminTests.TabsAndMenus
         {
             EnsureDefaultTemplatesShown();
 
-            foreach (VM vm in GetAllXenObjects<VM>(v => v.is_a_template && !v.DefaultTemplate && !v.is_a_snapshot))
+            foreach (VM vm in GetAllXenObjects<VM>(v => v.is_a_template && !v.DefaultTemplate() && !v.is_a_snapshot))
             {
                 ExpectedMenuItem[] poolToolStripMenuItem = new ExpectedMenuItem[]{
 	                new ExpectedTextMenuItem("&New Pool...", true, false  ),
@@ -566,6 +571,7 @@ namespace XenAdminTests.TabsAndMenus
 	                new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                new ExpectedTextMenuItem("&Export...", false, false  ),
+                    new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                     new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                     new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                new ExpectedSeparator(),
@@ -598,7 +604,7 @@ namespace XenAdminTests.TabsAndMenus
                 ExpectedMenuItem[] templatesToolStripMenuItem = new ExpectedMenuItem[]{
 	                new ExpectedTextMenuItem("Create &VM From Selection", true, false, new ExpectedMenuItem[]{
                         new ExpectedTextMenuItem("&New VM wizard...", true, false  ),
-	                    new ExpectedTextMenuItem("&Quick Create", vm.InstantTemplate, false  )}  ),
+	                    new ExpectedTextMenuItem("&Quick Create", vm.InstantTemplate(), false  )}  ),
                     new ExpectedSeparator(),
 	                new ExpectedTextMenuItem("&Export to File...", true, false  ),
 	                new ExpectedTextMenuItem("&Copy...", true, false  ),
@@ -617,7 +623,7 @@ namespace XenAdminTests.TabsAndMenus
         {
             EnsureChecked(MainWindowWrapper.ViewMenuItems.LocalStorageToolStripMenuItem);
 
-            foreach (SR sr in GetAllXenObjects<SR>(s => !s.IsToolsSR))
+            foreach (SR sr in GetAllXenObjects<SR>(s => !s.IsToolsSR()))
             {
                 ExpectedMenuItem[] poolToolStripMenuItem = new ExpectedMenuItem[]{
 	                new ExpectedTextMenuItem("&New Pool...", true, false  ),
@@ -656,7 +662,7 @@ namespace XenAdminTests.TabsAndMenus
 	                new ExpectedTextMenuItem("&Back Up...", false, false  ),
 	                new ExpectedTextMenuItem("Restore From Back&up...", false, false  ),
 	                new ExpectedSeparator(),
-	                new ExpectedTextMenuItem("Enter &Maintenance Mode...", sr.Home != null, false  ),
+	                new ExpectedTextMenuItem("Enter &Maintenance Mode...", sr.Home() != null, false  ),
 	                new ExpectedTextMenuItem("Control &Domain Memory...", false, false  ),
 	                new ExpectedTextMenuItem("Remove Crash Dump &Files", false, false  ),
                     new ExpectedTextMenuItem("Pass&word", false, false, new ExpectedMenuItem[]{
@@ -666,7 +672,7 @@ namespace XenAdminTests.TabsAndMenus
                     new ExpectedTextMenuItem("D&estroy", false, false  ),
 	                new ExpectedTextMenuItem("Remo&ve from " + Branding.BRAND_CONSOLE, false, false  ),
 	                new ExpectedSeparator(),
-	                new ExpectedTextMenuItem("P&roperties", sr.Home != null, false  )
+	                new ExpectedTextMenuItem("P&roperties", sr.Home() != null, false  )
                 };
 
                 ExpectedMenuItem[] VMToolStripMenuItem = new ExpectedMenuItem[]{
@@ -680,6 +686,7 @@ namespace XenAdminTests.TabsAndMenus
 	                new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                new ExpectedTextMenuItem("&Export...", false, false  ),
+                    new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                     new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                     new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                new ExpectedSeparator(),
@@ -795,6 +802,7 @@ namespace XenAdminTests.TabsAndMenus
 	                    new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                    new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                    new ExpectedTextMenuItem("&Export...", false, false  ),
+                        new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                         new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                         new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                    new ExpectedSeparator(),
@@ -913,6 +921,7 @@ namespace XenAdminTests.TabsAndMenus
                     new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
                     new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
                     new ExpectedTextMenuItem("&Export...", false, false  ),
+                    new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                     new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                     new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
                     new ExpectedSeparator(),
@@ -1032,6 +1041,7 @@ namespace XenAdminTests.TabsAndMenus
 	                    new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                    new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                    new ExpectedTextMenuItem("&Export...", false, false  ),
+                        new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                         new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                         new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                    new ExpectedSeparator(),
@@ -1152,6 +1162,7 @@ namespace XenAdminTests.TabsAndMenus
                     new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
                     new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
                     new ExpectedTextMenuItem("&Export...", false, false  ),
+                    new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                     new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                     new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
                     new ExpectedSeparator(),
@@ -1273,6 +1284,7 @@ namespace XenAdminTests.TabsAndMenus
 	                    new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	                    new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	                    new ExpectedTextMenuItem("&Export...", false, false  ),
+                        new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                         new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                         new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	                    new ExpectedSeparator(),
@@ -1389,6 +1401,7 @@ namespace XenAdminTests.TabsAndMenus
 	            new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	            new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	            new ExpectedTextMenuItem("&Export...", true, false  ),
+                new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                 new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                 new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	            new ExpectedSeparator(),
@@ -1498,6 +1511,7 @@ namespace XenAdminTests.TabsAndMenus
 	            new ExpectedTextMenuItem("Ta&ke a Snapshot...", false, false  ),
 	            new ExpectedTextMenuItem("Convert to &Template...", false, false  ),
 	            new ExpectedTextMenuItem("&Export...", true, false  ),
+                new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                 new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                 new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
 	            new ExpectedSeparator(),
@@ -1641,6 +1655,7 @@ namespace XenAdminTests.TabsAndMenus
                             new ExpectedTextMenuItem("Ta&ke a Snapshot...", true, false),
                             new ExpectedTextMenuItem("Convert to &Template...", false, false),
                             new ExpectedTextMenuItem("&Export...", false, false),
+                            new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                             new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                             new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
                             new ExpectedSeparator(),
@@ -1765,6 +1780,7 @@ namespace XenAdminTests.TabsAndMenus
                         new ExpectedTextMenuItem("Ta&ke a Snapshot...", true, false),
                         new ExpectedTextMenuItem("Convert to &Template...", false, false),
                         new ExpectedTextMenuItem("&Export...", false, false),
+                        new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                         new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                         new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
                         new ExpectedSeparator(),
@@ -1899,6 +1915,7 @@ namespace XenAdminTests.TabsAndMenus
                         new ExpectedTextMenuItem("Ta&ke a Snapshot...", true, false),
                         new ExpectedTextMenuItem("Convert to &Template...", true, false),
                         new ExpectedTextMenuItem("&Export...", true, false),
+                        new ExpectedTextMenuItem("D&isable Changed Block Tracking", false, false  ),
                         new ExpectedTextMenuItem("Ena&ble PVS-Accelerator...", false, false  ),
                         new ExpectedTextMenuItem("Disable P&VS-Accelerator", false, false  ),
                         new ExpectedSeparator(),

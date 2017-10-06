@@ -604,6 +604,10 @@ namespace XenAPI
         Response<bool>
         pool_get_live_patching_disabled(string session, string _pool);
 
+        [XmlRpcMethod("pool.get_igmp_snooping_enabled")]
+        Response<bool>
+        pool_get_igmp_snooping_enabled(string session, string _pool);
+
         [XmlRpcMethod("pool.set_name_label")]
         Response<string>
         pool_set_name_label(string session, string _pool, string _name_label);
@@ -1023,6 +1027,14 @@ namespace XenAPI
         [XmlRpcMethod("Async.pool.disable_ssl_legacy")]
         Response<string>
         async_pool_disable_ssl_legacy(string session, string _pool);
+
+        [XmlRpcMethod("pool.set_igmp_snooping_enabled")]
+        Response<string>
+        pool_set_igmp_snooping_enabled(string session, string _pool, bool _value);
+
+        [XmlRpcMethod("Async.pool.set_igmp_snooping_enabled")]
+        Response<string>
+        async_pool_set_igmp_snooping_enabled(string session, string _pool, bool _value);
 
         [XmlRpcMethod("pool.has_extension")]
         Response<bool>
@@ -4664,6 +4676,10 @@ namespace XenAPI
         Response<string []>
         pif_get_capabilities(string session, string _pif);
 
+        [XmlRpcMethod("PIF.get_igmp_snooping_status")]
+        Response<string>
+        pif_get_igmp_snooping_status(string session, string _pif);
+
         [XmlRpcMethod("PIF.set_other_config")]
         Response<string>
         pif_set_other_config(string session, string _pif, Object _other_config);
@@ -5956,13 +5972,13 @@ namespace XenAPI
         Response<string>
         async_vdi_data_destroy(string session, string _vdi);
 
-        [XmlRpcMethod("VDI.export_changed_blocks")]
+        [XmlRpcMethod("VDI.list_changed_blocks")]
         Response<string>
-        vdi_export_changed_blocks(string session, string _vdi, string _vdi_to);
+        vdi_list_changed_blocks(string session, string _vdi, string _vdi_to);
 
-        [XmlRpcMethod("Async.VDI.export_changed_blocks")]
+        [XmlRpcMethod("Async.VDI.list_changed_blocks")]
         Response<string>
-        async_vdi_export_changed_blocks(string session, string _vdi, string _vdi_to);
+        async_vdi_list_changed_blocks(string session, string _vdi, string _vdi_to);
 
         [XmlRpcMethod("VDI.get_nbd_info")]
         Response<string []>
@@ -7704,6 +7720,7 @@ namespace XenAPI
         public Object cpu_info;
         public bool policy_no_vendor_device;
         public bool live_patching_disabled;
+        public bool igmp_snooping_enabled;
     }
 
     [XmlRpcMissingMapping(MappingAction.Ignore)]
@@ -8131,6 +8148,7 @@ namespace XenAPI
         public bool managed;
         public Object properties;
         public string [] capabilities;
+        public string igmp_snooping_status;
     }
 
     [XmlRpcMissingMapping(MappingAction.Ignore)]

@@ -565,6 +565,33 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disable Changed Block Tracking.
+        /// </summary>
+        public static string ACTION_DISABLE_CHANGED_BLOCK_TRACKING {
+            get {
+                return ResourceManager.GetString("ACTION_DISABLE_CHANGED_BLOCK_TRACKING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabling Changed Block Tracking for VM &apos;{0}&apos;.
+        /// </summary>
+        public static string ACTION_DISABLE_CHANGED_BLOCK_TRACKING_FOR {
+            get {
+                return ResourceManager.GetString("ACTION_DISABLE_CHANGED_BLOCK_TRACKING_FOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable IGMP snooping.
+        /// </summary>
+        public static string ACTION_DISABLE_IGMP_SNOOPING {
+            get {
+                return ResourceManager.GetString("ACTION_DISABLE_IGMP_SNOOPING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disable live patching.
         /// </summary>
         public static string ACTION_DISABLE_LIVE_PATCHING {
@@ -610,11 +637,29 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Disabled Changed Block Tracking for selected VMs.
+        /// </summary>
+        public static string ACTION_DISABLED_CHANGED_BLOCK_TRACKING {
+            get {
+                return ResourceManager.GetString("ACTION_DISABLED_CHANGED_BLOCK_TRACKING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Disabled PVS-Accelerator for selected VMs.
         /// </summary>
         public static string ACTION_DISABLED_PVS_READ_CACHING {
             get {
                 return ResourceManager.GetString("ACTION_DISABLED_PVS_READ_CACHING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disabling Changed Block Tracking for selected VMs.
+        /// </summary>
+        public static string ACTION_DISABLING_CHANGED_BLOCK_TRACKING {
+            get {
+                return ResourceManager.GetString("ACTION_DISABLING_CHANGED_BLOCK_TRACKING", resourceCulture);
             }
         }
         
@@ -921,6 +966,15 @@ namespace XenAdmin {
         public static string ACTION_DR_TASK_DESTROY_TITLE {
             get {
                 return ResourceManager.GetString("ACTION_DR_TASK_DESTROY_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enable IGMP snooping.
+        /// </summary>
+        public static string ACTION_ENABLE_IGMP_SNOOPING {
+            get {
+                return ResourceManager.GetString("ACTION_ENABLE_IGMP_SNOOPING", resourceCulture);
             }
         }
         
@@ -4788,7 +4842,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to New [XenCenter] Available.
+        ///   Looks up a localized string similar to {0} is now available.
         /// </summary>
         public static string ALERT_NEW_VERSION {
             get {
@@ -6459,6 +6513,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This virtual disk has CBT enabled. It cannot be moved to another storage repository..
+        /// </summary>
+        public static string CANNOT_MOVE_CBT_ENABLED_VDI {
+            get {
+                return ResourceManager.GetString("CANNOT_MOVE_CBT_ENABLED_VDI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This virtual disk is used for DR. It cannot be moved to another storage repository..
         /// </summary>
         public static string CANNOT_MOVE_DR_VD {
@@ -6809,6 +6872,15 @@ namespace XenAdmin {
         public static string CHECKING_UPGRADE_HOTFIX_STATUS {
             get {
                 return ResourceManager.GetString("CHECKING_UPGRADE_HOTFIX_STATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Checking [XenCenter] version.
+        /// </summary>
+        public static string CHECKING_XENCENTER_VERSION {
+            get {
+                return ResourceManager.GetString("CHECKING_XENCENTER_VERSION", resourceCulture);
             }
         }
         
@@ -7312,6 +7384,42 @@ namespace XenAdmin {
         public static string CONFIRM_DESTROY_HOST_YES_BUTTON_LABEL {
             get {
                 return ResourceManager.GetString("CONFIRM_DESTROY_HOST_YES_BUTTON_LABEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will disable Changed Block Tracking on the disks of the selected VM. If you are using any third-party solutions to back up the VM, they might be affected. Note that Changed Block Tracking cannot be enabled again from [XenCenter]. Do you want to continue?.
+        /// </summary>
+        public static string CONFIRM_DISABLE_CBT_VM {
+            get {
+                return ResourceManager.GetString("CONFIRM_DISABLE_CBT_VM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable Changed Block Tracking on VM &quot;{0}&quot;.
+        /// </summary>
+        public static string CONFIRM_DISABLE_CBT_VM_TITLE {
+            get {
+                return ResourceManager.GetString("CONFIRM_DISABLE_CBT_VM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will disable Changed Block Tracking on the disks of the selected VMs. If you are using any third-party solutions to back up the VMs, they might be affected. Note that Changed Block Tracking cannot be enabled again from [XenCenter]. Do you want to continue?.
+        /// </summary>
+        public static string CONFIRM_DISABLE_CBT_VMS {
+            get {
+                return ResourceManager.GetString("CONFIRM_DISABLE_CBT_VMS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disable Changed Block Tracking on selected VMs.
+        /// </summary>
+        public static string CONFIRM_DISABLE_CBT_VMs_TITLE {
+            get {
+                return ResourceManager.GetString("CONFIRM_DISABLE_CBT_VMs_TITLE", resourceCulture);
             }
         }
         
@@ -11682,7 +11790,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloading {0}.
+        ///   Looks up a localized string similar to Downloading update {0}.
         /// </summary>
         public static string DOWNLOAD_AND_EXTRACT_ACTION_DOWNLOADING_DESC {
             get {
@@ -11691,7 +11799,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Downloading {0} ({1} of {2}).
+        ///   Looks up a localized string similar to Downloading update {0} ({1} of {2}).
         /// </summary>
         public static string DOWNLOAD_AND_EXTRACT_ACTION_DOWNLOADING_DETAILS_DESC {
             get {
@@ -11700,7 +11808,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Extracting {0}.
+        ///   Looks up a localized string similar to Extracting update {0}.
         /// </summary>
         public static string DOWNLOAD_AND_EXTRACT_ACTION_EXTRACTING_DESC {
             get {
@@ -11727,7 +11835,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download and extract {0}.
+        ///   Looks up a localized string similar to Download and extract update {0}.
         /// </summary>
         public static string DOWNLOAD_AND_EXTRACT_ACTION_TITLE {
             get {
@@ -18942,6 +19050,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Installed Updates.
+        /// </summary>
+        public static string INSTALLED_UPDATES {
+            get {
+                return ResourceManager.GetString("INSTALLED_UPDATES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not find a CD drive on the selected VM..
         /// </summary>
         public static string INSTALLTOOLS_COULDNOTFIND_CD {
@@ -20560,6 +20677,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to D&amp;isable Changed Block Tracking.
+        /// </summary>
+        public static string MAINWINDOW_DISABLE_CHANGED_BLOCK_TRACKING {
+            get {
+                return ResourceManager.GetString("MAINWINDOW_DISABLE_CHANGED_BLOCK_TRACKING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Dis&amp;connect.
         /// </summary>
         public static string MAINWINDOW_DISCONNECT {
@@ -21240,6 +21366,15 @@ namespace XenAdmin {
         public static string MAKE_DEFAULT_SR {
             get {
                 return ResourceManager.GetString("MAKE_DEFAULT_SR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No update is needed..
+        /// </summary>
+        public static string MANAGE_UPDATES_PAGE_UPDATES_NOT_AVAILABLE {
+            get {
+                return ResourceManager.GetString("MANAGE_UPDATES_PAGE_UPDATES_NOT_AVAILABLE", resourceCulture);
             }
         }
         
@@ -22636,6 +22771,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Network Options.
+        /// </summary>
+        public static string NETWORK_OPTIONS {
+            get {
+                return ResourceManager.GetString("NETWORK_OPTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The connection to the server was lost. No changes have been made..
         /// </summary>
         public static string NETWORK_RECONFIG_CONNECTION_LOST {
@@ -22800,6 +22944,24 @@ namespace XenAdmin {
         public static string NETWORKING_PROPERTIES_WARNING_CHANGING_MANAGEMENT_POOL {
             get {
                 return ResourceManager.GetString("NETWORKING_PROPERTIES_WARNING_CHANGING_MANAGEMENT_POOL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IGMP snooping disabled.
+        /// </summary>
+        public static string NETWORKOPTIONSEDITPAGE_SUBTEXT_IGMP_SNOOPING_DISABLED {
+            get {
+                return ResourceManager.GetString("NETWORKOPTIONSEDITPAGE_SUBTEXT_IGMP_SNOOPING_DISABLED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IGMP snooping enabled.
+        /// </summary>
+        public static string NETWORKOPTIONSEDITPAGE_SUBTEXT_IGMP_SNOOPING_ENABLED {
+            get {
+                return ResourceManager.GetString("NETWORKOPTIONSEDITPAGE_SUBTEXT_IGMP_SNOOPING_ENABLED", resourceCulture);
             }
         }
         
@@ -23313,20 +23475,11 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Use this wizard to define a snapshot schedule that will create automatic scheduled snapshot jobs for your VMs..
+        ///   Looks up a localized string similar to New [XenCenter] version required.
         /// </summary>
-        public static string NEW_VMSS_PAGE_TEXT {
+        public static string NEW_XENCENTER_REQUIRED_INFO {
             get {
-                return ResourceManager.GetString("NEW_VMSS_PAGE_TEXT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To begin, enter a name for the schedule and a description (optional), then click Next..
-        /// </summary>
-        public static string NEW_VMSS_PAGE_TEXT_MORE {
-            get {
-                return ResourceManager.GetString("NEW_VMSS_PAGE_TEXT_MORE", resourceCulture);
+                return ResourceManager.GetString("NEW_XENCENTER_REQUIRED_INFO", resourceCulture);
             }
         }
         
@@ -25595,6 +25748,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Out of date.
+        /// </summary>
+        public static string NOT_UPDATED {
+            get {
+                return ResourceManager.GetString("NOT_UPDATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not Upgraded.
         /// </summary>
         public static string NOT_UPGRADED {
@@ -26183,6 +26345,24 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Installation size: {0}.
+        /// </summary>
+        public static string PATCH_INSTALLATION_SIZE {
+            get {
+                return ResourceManager.GetString("PATCH_INSTALLATION_SIZE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This version requires [XenCenter] {0} or newer.
+        /// </summary>
+        public static string PATCH_NEEDS_NEW_XENCENTER {
+            get {
+                return ResourceManager.GetString("PATCH_NEEDS_NEW_XENCENTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Not found.
         /// </summary>
         public static string PATCH_NOT_FOUND {
@@ -26225,6 +26405,15 @@ namespace XenAdmin {
         public static string PATCHING_WARNING_HA {
             get {
                 return ResourceManager.GetString("PATCHING_WARNING_HA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} ok..
+        /// </summary>
+        public static string PATCHING_WIZARD_CHECK_OK {
+            get {
+                return ResourceManager.GetString("PATCHING_WIZARD_CHECK_OK", resourceCulture);
             }
         }
         
@@ -26343,6 +26532,15 @@ namespace XenAdmin {
         public static string PATCHINGWIZARD_AUTOUPDATINGPAGE_FAILED {
             get {
                 return ResourceManager.GetString("PATCHINGWIZARD_AUTOUPDATINGPAGE_FAILED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}....
+        /// </summary>
+        public static string PATCHINGWIZARD_AUTOUPDATINGPAGE_IN_PROGRESS_DOTDOTDOT {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_AUTOUPDATINGPAGE_IN_PROGRESS_DOTDOTDOT", resourceCulture);
             }
         }
         
@@ -26770,6 +26968,24 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Also apply all released updates on the new version.
+        /// </summary>
+        public static string PATCHINGWIZARD_SELECTSERVERPAGE_APPLY_UPDATES {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_SELECTSERVERPAGE_APPLY_UPDATES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Also apply all released updates on the new version (only on pools licensed for automated updates).
+        /// </summary>
+        public static string PATCHINGWIZARD_SELECTSERVERPAGE_APPLY_UPDATES_MIXED {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_SELECTSERVERPAGE_APPLY_UPDATES_MIXED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automated updates are not supported on this [XenServer] version.
         /// </summary>
         public static string PATCHINGWIZARD_SELECTSERVERPAGE_AUTOMATED_UPDATES_NOT_SUPPORTED_HOST_VERSION {
@@ -26872,6 +27088,16 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select one or more pools or standalone servers that you want to update to the new version.
+        ///Servers where this update cannot be applied appear disabled in this list..
+        /// </summary>
+        public static string PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_NEW_VERSION_MODE {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_SELECTSERVERPAGE_RUBRIC_NEW_VERSION_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select one or more pools or standalone servers where you want to apply the selected update.
         ///Servers where this update cannot be applied appear disabled in this list..
         /// </summary>
@@ -26918,11 +27144,38 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The new version has been installed..
+        /// </summary>
+        public static string PATCHINGWIZARD_UPDATES_DONE_AUTOMATED_NEW_VERSION_MODE {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_UPDATES_DONE_AUTOMATED_NEW_VERSION_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automated updates have finished..
         /// </summary>
         public static string PATCHINGWIZARD_UPDATES_DONE_AUTOMATED_UPDATES_MODE {
             get {
                 return ResourceManager.GetString("PATCHINGWIZARD_UPDATES_DONE_AUTOMATED_UPDATES_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installing updates:.
+        /// </summary>
+        public static string PATCHINGWIZARD_UPLOAD_AND_INSTALL_TITLE_AUTOMATED_MODE {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_UPLOAD_AND_INSTALL_TITLE_AUTOMATED_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Installing new version:.
+        /// </summary>
+        public static string PATCHINGWIZARD_UPLOAD_AND_INSTALL_TITLE_NEW_VERSION_AUTOMATED_MODE {
+            get {
+                return ResourceManager.GetString("PATCHINGWIZARD_UPLOAD_AND_INSTALL_TITLE_NEW_VERSION_AUTOMATED_MODE", resourceCulture);
             }
         }
         
@@ -27944,6 +28197,15 @@ namespace XenAdmin {
         public static string PROBLEM_VMPROBLEM_TITLE {
             get {
                 return ResourceManager.GetString("PROBLEM_VMPROBLEM_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [XenCenter] version.
+        /// </summary>
+        public static string PROBLEM_XENCENTER_VERSION_TITLE {
+            get {
+                return ResourceManager.GetString("PROBLEM_XENCENTER_VERSION_TITLE", resourceCulture);
             }
         }
         
@@ -29166,6 +29428,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Required Updates.
+        /// </summary>
+        public static string REQUIRED_UPDATES {
+            get {
+                return ResourceManager.GetString("REQUIRED_UPDATES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Resolved as {0}.
         /// </summary>
         public static string RESOLVED_AS {
@@ -29593,15 +29864,6 @@ namespace XenAdmin {
         public static string RUNNING_ON {
             get {
                 return ResourceManager.GetString("RUNNING_ON", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Taking snapshots.
-        /// </summary>
-        public static string RUNNING_SNAPSHOTS {
-            get {
-                return ResourceManager.GetString("RUNNING_SNAPSHOTS", resourceCulture);
             }
         }
         
@@ -30723,7 +30985,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Snapshot schedule.
+        ///   Looks up a localized string similar to Snapshot Schedule.
         /// </summary>
         public static string SNAPSHOT_FREQUENCY {
             get {
@@ -33085,6 +33347,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Up to date.
+        /// </summary>
+        public static string UPDATED {
+            get {
+                return ResourceManager.GetString("UPDATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updated performance monitoring configuration.
         /// </summary>
         public static string UPDATED_PERFMON {
@@ -33262,6 +33533,15 @@ namespace XenAdmin {
         public static string UPDATES_DOWNLOAD_AND_INSTALL {
             get {
                 return ResourceManager.GetString("UPDATES_DOWNLOAD_AND_INSTALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Download [XenCenter].
+        /// </summary>
+        public static string UPDATES_DOWNLOAD_REQUIRED_XENCENTER {
+            get {
+                return ResourceManager.GetString("UPDATES_DOWNLOAD_REQUIRED_XENCENTER", resourceCulture);
             }
         }
         
@@ -33635,6 +33915,24 @@ namespace XenAdmin {
         public static string UPDATES_WIZARD_LOCAL_STORAGE {
             get {
                 return ResourceManager.GetString("UPDATES_WIZARD_LOCAL_STORAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [XenCenter] version {0} or newer is required..
+        /// </summary>
+        public static string UPDATES_WIZARD_NEWER_XENCENTER_REQUIRED {
+            get {
+                return ResourceManager.GetString("UPDATES_WIZARD_NEWER_XENCENTER_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ensure you have upgraded [XenCenter] before upgrading [XenServer]..
+        /// </summary>
+        public static string UPDATES_WIZARD_NEWER_XENCENTER_WARNING {
+            get {
+                return ResourceManager.GetString("UPDATES_WIZARD_NEWER_XENCENTER_WARNING", resourceCulture);
             }
         }
         
@@ -35044,6 +35342,15 @@ namespace XenAdmin {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Version.
+        /// </summary>
+        public static string VERSION {
+            get {
+                return ResourceManager.GetString("VERSION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to [XenCenter] version {0} (build {1}.{2}) {3}-bit.
         /// </summary>
         public static string VERSION_NUMBER {
@@ -36079,24 +36386,6 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create a snapshot schedule for your VMs..
-        /// </summary>
-        public static string VMSS_DIALOG_TEXT {
-            get {
-                return ResourceManager.GetString("VMSS_DIALOG_TEXT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Snapshot schedules.
-        /// </summary>
-        public static string VMSS_DIALOG_TITLE {
-            get {
-                return ResourceManager.GetString("VMSS_DIALOG_TITLE", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Send &amp;email notifications about snapshot schedule job alerts.
         /// </summary>
         public static string VMSS_EMAIL_CHECKBOX_TEXT {
@@ -36169,15 +36458,6 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Schedule na&amp;me:.
-        /// </summary>
-        public static string VMSS_NAME_FIELD_TEXT {
-            get {
-                return ResourceManager.GetString("VMSS_NAME_FIELD_TEXT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to What do you want to call this schedule?.
         /// </summary>
         public static string VMSS_NAME_TITLE {
@@ -36232,7 +36512,7 @@ namespace XenAdmin {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VMs in the snapshot schedule.
+        ///   Looks up a localized string similar to Virtual Machines.
         /// </summary>
         public static string VMSS_VMS {
             get {
@@ -38710,6 +38990,15 @@ namespace XenAdmin {
         public static string XENCENTER_NEWER_AVAILABLE {
             get {
                 return ResourceManager.GetString("XENCENTER_NEWER_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [XenCenter] version check.
+        /// </summary>
+        public static string XENCENTER_VERSION_CHECK_DESCRIPTION {
+            get {
+                return ResourceManager.GetString("XENCENTER_VERSION_CHECK_DESCRIPTION", resourceCulture);
             }
         }
         

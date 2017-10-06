@@ -261,6 +261,9 @@
   <data name="COULD_NOT_IMPORT_DATABASE" xml:space="preserve">
     <value>An error occurred while attempting to import a database from a metadata VDI</value>
   </data>
+  <data name="COULD_NOT_UPDATE_IGMP_SNOOPING_EVERYWHERE" xml:space="preserve">
+    <value>The IGMP Snooping setting cannot be applied for some of the host, network(s).</value>
+  </data>
   <data name="CPU_FEATURE_MASKING_NOT_SUPPORTED" xml:space="preserve">
     <value>The CPU does not support masking of features.</value>
   </data>
@@ -1223,6 +1226,12 @@ Authorized Roles: {1}</value>
   <data name="SR_BACKEND_FAILURE_226" xml:space="preserve">
     <value>Invalid local path</value>
   </data>
+  <data name="SR_BACKEND_FAILURE_227" xml:space="preserve">
+    <value>Given SMB version is not allowed. Choose either 1.0 or 3.0</value>
+  </data>
+  <data name="SR_BACKEND_FAILURE_228" xml:space="preserve">
+    <value>Require &quot;-o&quot; along with xe-mount-isosr</value>
+  </data>
   <data name="SR_BACKEND_FAILURE_24" xml:space="preserve">
     <value>The specified VDI is currently in use</value>
   </data>
@@ -1408,6 +1417,9 @@ Authorized Roles: {1}</value>
   </data>
   <data name="SR_BACKEND_FAILURE_46" xml:space="preserve">
     <value>The VDI is not available</value>
+  </data>
+  <data name="SR_BACKEND_FAILURE_460" xml:space="preserve">
+    <value>Failed to calculate changed blocks for given VDIs.</value>
   </data>
   <data name="SR_BACKEND_FAILURE_47" xml:space="preserve">
     <value>The storage repository is not available</value>
